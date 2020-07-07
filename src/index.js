@@ -20,7 +20,7 @@ function replaceImportPathPlugin (path, t, opts) {
 
 export default function replaceImportPath ({types: t}) {
     return {
-        name: 'replace-import-path',
+        name: 'replace-import',
         visitor: {
             ImportDeclaration (path, { opts = {} }) {
                 if (Object.prototype.toString.call(opts) === '[object Array]') {

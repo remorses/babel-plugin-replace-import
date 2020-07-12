@@ -1,6 +1,8 @@
-
 # babel-plugin-replace-import
 
+Replace import and require paths
+
+Useful if you are working in a monorepo and you want to import from the `/src` directories to not compile the code every time you want to run tests
 
 ## Installation
 
@@ -20,13 +22,16 @@ Via `.babelrc` or babel-loader.
 
 ```
 {
-  "plugins": [["replace-import-path", options]]
+  "plugins": [["replace-import-path", {
+        src: /test\/(\w+)\/src/,
+        dest: 'test/$1'
+    }]]
 }
 ```
 
 ### options
 
-`options` can be object.
+`options` can be an object or array
 
 ```
 {
@@ -59,8 +64,9 @@ import { A } from 'test1/aaa';
 
 ↓ ↓ ↓ ↓ ↓ ↓
 
-var a = require('test2/bbb');
+import { A } from 'test2/bbb';
 ```
 
 ## LICENSE
+
 MIT

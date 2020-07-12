@@ -5,10 +5,10 @@ export default function replaceImportPath({ types: t }) {
             ImportDeclaration(path, { opts = {} }) {
                 if (Array.isArray(opts)) {
                     opts.forEach((opt) => {
-                        replaceImport(path, t, opt)
+                        replaceImport(path, opt)
                     })
                 } else {
-                    replaceImport(path, t, opts)
+                    replaceImport(path, opts)
                 }
             },
             CallExpression(path, { opts = {} }) {
@@ -37,7 +37,7 @@ export default function replaceImportPath({ types: t }) {
 //     }
 // }
 
-function replaceImport(path, t, opts) {
+function replaceImport(path, opts) {
     const { src, dest } = opts
     if (!src || !dest) {
         console.error(

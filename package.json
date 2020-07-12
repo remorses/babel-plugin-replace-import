@@ -29,10 +29,10 @@
     "scripts": {
         "prepush": "npm run ilint -q",
         "prepublishOnly": "npm run build",
-        "build": "npx babel src --out-dir lib --extensions .js --copy-files --presets=env",
+        "build": "tsc ",
         "ilint": "npx eslint --color src/**/*.js",
         "fix": "npx eslint --fix src/**/*.js",
-        "test": "npx mocha test/index.js"
+        "test": "yarn build && npx mocha test/index.js"
     },
     "dependencies": {},
     "devDependencies": {
@@ -48,7 +48,8 @@
         "eslint-plugin-promise": "^3.7.0",
         "eslint-plugin-standard": "^3.0.1",
         "husky": "^0.14.3",
-        "mocha": "^5.0.4"
+        "mocha": "^5.0.4",
+        "typescript": "^3.9.6"
     },
     "engines": {
         "node": ">= 6.0.0"

@@ -14,7 +14,7 @@
     ],
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/remorses/babel-plugin-replace-import-path.git"
+        "url": "git+https://github.com/remorses/babel-plugin-replace-import.git"
     },
     "keywords": [
         "babel",
@@ -23,9 +23,9 @@
         "replace"
     ],
     "bugs": {
-        "url": "https://github.com/remorses/babel-plugin-replace-import-path/issues"
+        "url": "https://github.com/remorses/babel-plugin-replace-import/issues"
     },
-    "homepage": "https://github.com/remorses/babel-plugin-replace-import-path#readme",
+    "homepage": "https://github.com/remorses/babel-plugin-replace-import#readme",
     "scripts": {
         "prepush": "npm run ilint -q",
         "prepublishOnly": "npm run build",
